@@ -75,4 +75,5 @@ public class SimpleZodiacService implements ZodiacService {
         // Must be end-of-year Capricorn
         return signs[0];
     }
+
 }
