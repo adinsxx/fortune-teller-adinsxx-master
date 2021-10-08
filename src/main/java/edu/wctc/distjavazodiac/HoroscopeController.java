@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HoroscopeController {
-
     private MonthListService monthListService;
     private HoroscopeService horoscopeService;
 
@@ -35,7 +34,7 @@ public class HoroscopeController {
     @GetMapping("/enter-birthday")
     public String showForm(Model model) {
         model.addAttribute("pageTitle", "Enter Your Birthday");
-        model.addAttribute("monthList", monthListService.getMonthList());
+        model.addAttribute("monthList", monthListService.getMonths());
 
         Birthday formDefaults = new Birthday();
         formDefaults.setYear(1975);

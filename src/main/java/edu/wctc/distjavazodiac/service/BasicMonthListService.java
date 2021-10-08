@@ -24,24 +24,12 @@ public class BasicMonthListService implements MonthListService {
     }
 
     @Override
-//    public List<Month> getMonths() {
-//        return monthList;
-//    }
+    public List<Month> getMonths() {
+        return monthList;
+    }
 
- //   @PostConstruct
-//    public void initMonths() {
-//        ObjectMapper mapper = new ObjectMapper();
-//        try {
-//            Month[] monthArray = mapper.readValue(Paths.get("months.json").toFile(), Month[].class);
-//            monthList = Arrays.asList(monthArray);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            monthList = new ArrayList<>(0);
-//        }
-//    }
-    public List<Month> getMonthList(){
-        List<Month> list = new ArrayList<>();
-        monthRepository.findAllByOrderByNumAscName().forEach(list::add);
-        return list;
+    @PostConstruct
+    public void initMonths() {
+        monthList = monthRepository.findAll();
     }
 }

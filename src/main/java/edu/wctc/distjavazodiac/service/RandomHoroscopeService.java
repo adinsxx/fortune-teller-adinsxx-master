@@ -49,20 +49,8 @@ public class RandomHoroscopeService implements HoroscopeService {
     }
 
     @PostConstruct
-//    public void initHoroscopes() {
-//        ObjectMapper mapper = new ObjectMapper();
-//
-//        Fortune[] fortuneArray;
-//        try {
-//            fortuneArray = mapper.readValue(Paths.get("fortunes.json").toFile(), Fortune[].class);
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//            fortuneArray = new Fortune[]{new Fortune()};
-//        }
-//        allFortunes = Arrays.asList(fortuneArray);
-//    }
-
-    public List<Fortune> getAllFortunes(int fortune_id) {
-        return fortuneRepository.findAllByTextOrderbyFortuneId();
+    public void initHoroscopes() {
+        allFortunes = fortuneRepository.findAll();
     }
+
 }
