@@ -14,8 +14,8 @@ import javax.persistence.Table;
 @Table(name="Month")
 public class Month {
     @Id
-    @Column(name="number")
+    @Column(name="num")
     private int number;
-    @Column(name="name")
+    @Column(name="nm")
     private String name;
 }
