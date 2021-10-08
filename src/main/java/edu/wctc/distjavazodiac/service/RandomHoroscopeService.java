@@ -26,9 +26,10 @@ public class RandomHoroscopeService implements HoroscopeService {
     private FortuneRepository fortuneRepository;
 
     @Autowired
-    public RandomHoroscopeService(ZodiacService zodiacService) {
-        this.zodiacService = zodiacService;
-    }
+//    public RandomHoroscopeService(ZodiacService zodiacService) {
+//        this.zodiacService = zodiacService;
+//    }
+    public RandomHoroscopeService(FortuneRepository fr) {this.fortuneRepository = fr;}
 
     @Override
     public Horoscope getHoroscope(Birthday birthday) {
@@ -62,6 +63,6 @@ public class RandomHoroscopeService implements HoroscopeService {
 //    }
 
     public List<Fortune> getAllFortunes(int fortune_id) {
-        return fortuneRepository.findAllByTextOrderbyFortuneId(fortune_id);
+        return fortuneRepository.findAllByTextOrderbyFortuneId();
     }
 }

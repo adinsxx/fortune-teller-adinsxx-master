@@ -6,5 +6,6 @@ import org.springframework.data.repository.CrudRepository;
 import java.util.List;
 
 public interface FortuneRepository extends CrudRepository<Fortune, Integer>{
-    List<Fortune> findAllByTextOrderbyFortuneId(int fortune_id);
+
+    List<Fortune> findAllByTextOrderbyFortuneId();
 }
